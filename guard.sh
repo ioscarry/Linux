@@ -3,7 +3,7 @@ x=$(cat /etc/rc.local | grep /etc/guard.sh | grep -v grep | wc -l)
 if [ $x -eq 0 ];then
     $(sed -i "s/exit 0//g" /etc/rc.local)
 	echo "chmod +x /etc/guard.sh"
-    	echo "sh /etc/guard.sh &" >> /etc/rc.local
+    echo "sh /etc/guard.sh &" >> /etc/rc.local
 	echo "exit 0" >> /etc/rc.local
 else
     echo ""
