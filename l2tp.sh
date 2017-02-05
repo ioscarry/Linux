@@ -6,6 +6,8 @@ export PATH
 #   Description: L2TP VPN Auto Installer                                #
 #   Author: Teddysun <i@teddysun.com>                                   #
 #   Intro:  https://teddysun.com/448.html                               #
+#   cat /dev/net/tun >> cat: /dev/net/tun: File descriptor in bad state #
+#   cat /dev/ppp     >> cat: /dev/ppp: No such device or address        #
 #=======================================================================#
 cur_dir=`pwd`
 
